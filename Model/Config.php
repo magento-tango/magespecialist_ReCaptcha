@@ -85,7 +85,7 @@ class Config
      */
     public function getPublicKey()
     {
-        return trim($this->scopeConfig->getValue(static::XML_PATH_PUBLIC_KEY, ScopeInterface::SCOPE_WEBSITE));
+        return trim((string) $this->scopeConfig->getValue(static::XML_PATH_PUBLIC_KEY, ScopeInterface::SCOPE_WEBSITE));
     }
 
     /**
@@ -94,7 +94,7 @@ class Config
      */
     public function getPrivateKey()
     {
-        return trim($this->scopeConfig->getValue(static::XML_PATH_PRIVATE_KEY, ScopeInterface::SCOPE_WEBSITE));
+        return trim((string) $this->scopeConfig->getValue(static::XML_PATH_PRIVATE_KEY, ScopeInterface::SCOPE_WEBSITE));
     }
 
     /**
@@ -333,7 +333,7 @@ class Config
      */
     public function getType(): string
     {
-        return $this->scopeConfig->getValue(static::XML_PATH_TYPE);
+        return (string) $this->scopeConfig->getValue(static::XML_PATH_TYPE);
     }
 
     /**
