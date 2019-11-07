@@ -130,6 +130,12 @@ define(
                 $reCaptcha.attr('id', this.getReCaptchaId());
 
                 $parentForm = $wrapper.parents('form');
+
+                if ($parentForm.length === 0) {
+                    // Form element not found.
+                    return;
+                }
+
                 me = this;
 
                 // eslint-disable-next-line no-undef
