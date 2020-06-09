@@ -23,6 +23,7 @@ namespace MSP\ReCaptcha\Model;
 use Magento\Framework\App\Area;
 use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Framework\App\RequestInterface;
+use Magento\Store\Model\ScopeInterface;
 
 class IsCheckRequired implements IsCheckRequiredInterface
 {
@@ -102,7 +103,8 @@ class IsCheckRequired implements IsCheckRequiredInterface
      */
     private function isZoneEnabled()
     {
-        return !$this->enableConfigFlag || $this->scopeConfig->getValue($this->enableConfigFlag);
+        return !$this->enableConfigFlag
+            || $this->scopeConfig->getValue($this->enableConfigFlag, ScopeInterface::SCOPE_WEBSITE);
     }
 
     /**
